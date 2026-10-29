@@ -1,0 +1,33 @@
+:root{--xhs:#ff2442;--bg:#fff;--ink:#333;--muted:#999;--line:#eee}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#1a1a1a;color:var(--ink)}
+.phone{max-width:390px;margin:0 auto;min-height:100vh;background:var(--bg);position:relative}
+.banner{background:#fff3f0;color:#a33;font-size:11px;padding:8px 12px;text-align:center}
+.bar{display:flex;align-items:center;gap:10px;padding:10px 12px;border-bottom:1px solid var(--line);position:sticky;top:0;background:#fff;z-index:3}
+.bar a{color:var(--ink);text-decoration:none;font-size:20px}
+.user{display:flex;align-items:center;gap:8px;flex:1}
+.av{width:32px;height:32px;border-radius:50%;background:var(--xhs)}
+.un{font-size:14px;font-weight:700}.uf{font-size:11px;color:var(--muted)}
+.follow{background:var(--xhs);color:#fff;border:0;border-radius:999px;padding:6px 12px;font-size:12px;font-weight:700}
+.hero{height:280px;color:#fff;padding:20px 16px;display:flex;align-items:flex-end;font-size:26px;font-weight:800;line-height:1.25}
+.h1{background:linear-gradient(160deg,#2f6b4f,#1a3d2e)}
+.h2{background:linear-gradient(160deg,#c4782a,#7a3e10)}
+.h3{background:linear-gradient(160deg,#4a6fa5,#243b63)}
+.body{padding:14px 16px 100px}
+.title{font-size:17px;font-weight:700;margin:0 0 10px}
+.p{font-size:14px;line-height:1.7;margin:0 0 10px;color:#444}
+.warn{background:#fff8f0;border-left:4px solid #e8a87c;padding:10px;border-radius:8px;font-size:13px;margin:12px 0}
+.ol{padding-left:1.2em;font-size:14px;line-height:1.7}
+.tag{display:inline-block;color:#3d7ea6;font-size:13px;margin-right:8px}
+.act{position:sticky;bottom:0;background:#fff;border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:10px 8px 16px;font-size:13px}
+.act button{appearance:none;border:0;background:transparent;font:inherit;cursor:pointer}
+.act .on{color:var(--xhs);font-weight:700}
+.comments{margin-top:16px;border-top:1px solid var(--line);padding-top:12px}
+.comments h3{font-size:14px;margin:0 0 10px}
+.cm{display:flex;gap:8px;margin:0 0 12px;font-size:13px}
+.cm .av{width:28px;height:28px;flex:none}
+.cm .nm{font-weight:700;margin-right:6px}
+.cm .tm{color:var(--muted);font-size:11px;margin-top:2px}
+.form{display:flex;gap:8px;margin-top:8px}
+.form input{flex:1;border:1px solid var(--line);border-radius:999px;padding:8px 12px;font:inherit}
+.form button{background:var(--xhs);color:#fff;border:0;border-radius:999px;padding:8px 14px;font-weight:700}
+.toast{position:fixed;left:50%;bottom:80px;transform:translateX(-50%);background:rgba(0,0,0,.78);color:#fff;padding:8px 14px;border-radius:8px;font-size:13px;display:none;z-index:9}
