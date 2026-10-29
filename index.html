@@ -4,49 +4,181 @@
 <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>低添加浆果小样意向 · 从容应对组</title>
 <style>
-:root{--g:#2f6b52;--g2:#3d8a68;--bg:#f4faf6;--ink:#1a2e24;--line:#c5ddd0}
-*{box-sizing:border-box}body{margin:0;font-family:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(165deg,#e8f5ee,#f4faf6 45%,#fff);color:var(--ink);line-height:1.55}
-.wrap{max-width:720px;margin:0 auto;padding:28px 18px 64px}
+:root{--g:#2f6b52;--g2:#3d8a68;--bg:#f4faf6;--ink:#1a2e24;--line:#c5ddd0;--warn:#9a6b20}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(165deg,#e8f5ee,#f4faf6 45%,#fff);color:var(--ink);line-height:1.55}
+.wrap{max-width:760px;margin:0 auto;padding:28px 18px 64px}
 .kicker{font-size:12px;color:var(--g);font-weight:700;letter-spacing:.08em}
 h1{font-size:1.55rem;margin:8px 0 10px;color:var(--g)}
 .lead{color:#3a5348}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.chip{font-size:12px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 10px;color:#5a7266}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0 4px}
 .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;margin:14px 0}
 .card h2{margin:0 0 10px;color:var(--g);font-size:1.05rem}
 .bound span{display:block;background:#eef7f1;border-left:3px solid var(--g);padding:8px 12px;margin:6px 0}
-label.ck{display:flex;gap:8px;padding:8px;border:1px solid var(--line);border-radius:10px;margin:6px 0;background:#fafdfb}
-.field{margin:8px 0}input,select,textarea{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;font:inherit}
-.btn{background:var(--g);color:#fff;border:0;padding:12px 18px;border-radius:999px;font:inherit;font-weight:700;cursor:pointer}
-.btn:disabled{opacity:.45} .err{color:#a33;display:none} .hint{font-size:.82rem;color:#5a7266}
+.g3{display:grid;gap:10px}@media(min-width:640px){.g3{grid-template-columns:repeat(3,1fr)}}
+.risk{padding:12px;border:1px dashed var(--line);border-radius:12px;background:#fafdfb}
+.risk b{display:block;color:var(--g);margin-bottom:4px}
+.q{margin:0 0 10px;padding:10px 12px;background:#eef7f1;border-left:3px solid var(--g);border-radius:0 10px 10px 0;color:#3a5348}
+.q cite{display:block;margin-top:4px;font-size:12px;color:#5a7266;font-style:normal}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{counter-increment:s;position:relative;padding:10px 10px 10px 44px;border:1px solid var(--line);border-radius:12px;margin:0 0 8px;background:#fafdfb}
+.steps li::before{content:counter(s);position:absolute;left:10px;top:10px;width:24px;height:24px;border-radius:50%;background:var(--g);color:#fff;font-size:13px;display:flex;align-items:center;justify-content:center}
+label.ck{display:flex;gap:8px;padding:8px;border:1px solid var(--line);border-radius:10px;margin:6px 0;background:#fafdfb;cursor:pointer}
+.field{margin:8px 0}.field>span{display:block;font-size:13px;font-weight:700;margin-bottom:4px}
+input,select,textarea{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;font:inherit}
+textarea{min-height:64px;resize:vertical}
+.row2{display:grid;gap:10px}@media(min-width:560px){.row2{grid-template-columns:1fr 1fr}}
+.btn{background:var(--g);color:#fff;border:0;padding:12px 18px;border-radius:999px;font:inherit;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}
+.btn:disabled{opacity:.45}.btn-g{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.err{color:#a33;display:none}.ok{color:#0b6b4a;font-weight:700}.hint{font-size:.82rem;color:#5a7266}
 .list{list-style:none;padding:0}.list li{border:1px solid var(--line);border-radius:10px;padding:10px;margin:6px 0;background:#fafdfb}
+.ex div{padding:10px;border:1px solid var(--line);border-radius:10px;margin:6px 0;font-size:13px;color:#3a5348}
+.warn{padding:12px 14px;border-radius:12px;background:#fff8ee;border-left:6px solid var(--warn);margin:14px 0}
+.faq details{border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:0 0 8px;background:#fff}
+.faq summary{cursor:pointer;font-weight:700}
+nav a{margin-right:10px;color:var(--g);font-size:13px}
+footer{margin-top:20px;font-size:12px;color:#5a7266}
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="kicker">从容应对组 · 课程 MVP · 个人信息待补</div>
   <h1>宿舍想吃干净浆果零食，先勾意向</h1>
-  <p class="lead">帮在校大学生解决低添加浆果零食选择少、售价偏高。只做小样/代工调研，不自建厂，不写医疗功效，不在此页下单。</p>
-  <div class="card"><h2>边界三句</h2><div class="bound">
-    <span>这是试吃意向页，不是保健品商城。</span>
-    <span>没有生产许可证就不建厂、不开作坊，后续只考虑代工。</span>
-    <span>不承诺减肥、抗氧化治病或保证瘦身；出现不适请停食。</span>
-  </div></div>
-  <div class="card"><h2>试吃意向五项</h2>
-    <p class="hint">五项勾齐才能保存。</p>
+  <p class="lead">帮<strong>在校大学生</strong>解决市面<strong>低添加浆果零食</strong>选择少、售价偏高。只做代工/小样调研，<strong>不自建厂</strong>、<strong>不写医疗功效</strong>、<strong>不在此页下单或收定金</strong>。</p>
+  <div class="chips">
+    <span class="chip">组别：从容应对组</span>
+    <span class="chip">姓名学号电话：待补</span>
+    <span class="chip">路径 B · 绿色轻工具</span>
+    <span class="chip">记录仅存本机</span>
+  </div>
+  <div class="cta">
+    <a class="btn" href="#pref">勾意向五项</a>
+    <a class="btn btn-g" href="#wish">写想买清单</a>
+    <a class="btn btn-g" href="#book">预约试吃</a>
+    <a class="btn btn-g" href="xhs/">看第6周模拟笔记</a>
+  </div>
+  <nav><a href="#why">依据</a><a href="#pref">五项</a><a href="#wish">清单</a><a href="#book">预约</a><a href="#hist">本机记录</a></nav>
+
+  <div class="warn"><strong>边界三句：</strong>这是试吃意向页，不是保健品商城；没有生产许可证就不建厂、不开作坊；不承诺减肥、抗氧化治病或保证瘦身。</div>
+
+  <div class="g3">
+    <div class="risk"><b>怕添加剂</b>配料表一长串或功效口号太多时，先用人话五项核对。</div>
+    <div class="risk"><b>怕礼盒溢价</b>网红浆果礼盒贵；本页先问宿舍预算，不推大礼盒。</div>
+    <div class="risk"><b>小步试吃</b>第1周已放弃自建厂与农户深加工主攻；每周仅2–3小时，不压货。</div>
+  </div>
+
+  <div class="card" id="why">
+    <h2>要对上的三件事</h2>
+    <blockquote class="q">宿舍加餐想买低添加浆果零食，选择少、售价偏高、配料难懂。<cite>第1周假设</cite></blockquote>
+    <blockquote class="q">可以先做方案与小样调研，但必须放弃自建厂。<cite>第1周对 AI 风险的态度</cite></blockquote>
+    <blockquote class="q">农户深加工有价值，现阶段时间与场地不够，只作备选。<cite>第1周最终选择</cite></blockquote>
+    <h2>三步上手</h2>
+    <ol class="steps">
+      <li>勾齐试吃意向五项（品类、痛点、自提、预算、边界）。</li>
+      <li>写一条想买清单（蓝莓干/果条/混合浆果、甜度）。</li>
+      <li>愿试吃再留 11 位手机，预约宿舍小样（不收定金）。</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>怎么用才不算糊弄（示例）</h2>
+    <div class="ex">
+      <div><strong>蓝莓干：</strong>勾「蓝莓干」，预算 10–25，备注「别太甜、糖油香精写清」。</div>
+      <div><strong>果条：</strong>勾「浆果果条」，选宿舍代收，先小样再决定是否跟单。</div>
+      <div><strong>怕功效词：</strong>痛点选「更怕添加剂」；页面不写抗氧化治病。</div>
+      <div><strong>不做的：</strong>自建厂、农户深加工主攻、先收定金、在此页付款。</div>
+    </div>
+  </div>
+
+  <div class="card" id="pref">
+    <h2>试吃意向五项</h2>
+    <p class="hint">五项勾齐才能保存。目标：打开就能说清想吃哪类、怕什么、怎么拿。</p>
     <form id="f">
       <label class="ck"><input type="checkbox" name="c1"/> 想买品类已想过（蓝莓干/果条/混合浆果）</label>
       <label class="ck"><input type="checkbox" name="c2"/> 痛点已选：更怕添加剂 / 更怕贵 / 两者都有</label>
       <label class="ck"><input type="checkbox" name="c3"/> 取货：宿舍代收 / 社团自提 / 仅先试吃</label>
       <label class="ck"><input type="checkbox" name="c4"/> 预算已填，接受先小样再决定是否跟单</label>
       <label class="ck"><input type="checkbox" name="c5"/> 边界：不建厂、不写医疗功效、不在此页付款</label>
-      <div class="field"><span>怎么称呼</span><input name="who" required placeholder="宿舍称呼"/></div>
-      <div class="field"><span>预算</span><select name="budget" required><option value="">请选择</option><option>10 以内先尝</option><option>10–25</option><option>25–40</option><option>看克重再说</option></select></div>
+      <div class="row2">
+        <div class="field"><span>怎么称呼</span><input name="who" required placeholder="宿舍称呼"/></div>
+        <div class="field"><span>预算</span>
+          <select name="budget" required>
+            <option value="">请选择</option>
+            <option>10 以内先尝</option>
+            <option>10–25</option>
+            <option>25–40</option>
+            <option>看克重再说</option>
+          </select>
+        </div>
+      </div>
+      <div class="row2">
+        <div class="field"><span>痛点</span>
+          <select name="pain"><option>更怕添加剂一长串</option><option>更怕礼盒溢价</option><option>两者都有</option></select>
+        </div>
+        <div class="field"><span>取货</span>
+          <select name="pickup"><option>宿舍代收</option><option>社团自提</option><option>仅先试吃再定</option></select>
+        </div>
+      </div>
       <div class="field"><span>一句想吃的</span><textarea name="note" placeholder="例如：蓝莓干别太甜；不要礼盒溢价"></textarea></div>
-      <button class="btn" id="save" type="submit" disabled>保存到本机</button>
+      <button class="btn" id="save" type="submit" disabled>保存意向到本机</button>
       <div class="err" id="err"></div>
+      <p class="hint">未勾齐会拦截。数据只在本浏览器，换设备会丢。</p>
     </form>
   </div>
-  <div class="card"><h2>本机记录</h2><ul class="list" id="list"><li>暂无</li></ul></div>
-  <p class="hint">公网 https://hjw-create.github.io/congyd-jiangguo-mvp/xhs/ 为第6周模拟笔记。联系方式待补。</p>
+
+  <div class="card" id="wish">
+    <h2>一条想买清单</h2>
+    <form id="wishForm">
+      <div class="row2">
+        <div class="field"><span>品名/品类</span><input name="item" required placeholder="低添加蓝莓干 / 果条"/></div>
+        <div class="field"><span>最在意</span>
+          <select name="care" required>
+            <option value="">请选择</option>
+            <option>配料说得清</option>
+            <option>甜度适中</option>
+            <option>别被礼盒抬价</option>
+            <option>小包装一次吃完</option>
+          </select>
+        </div>
+      </div>
+      <div class="field"><span>备注</span><textarea name="note" placeholder="糖油香精写清；不要功效口号"></textarea></div>
+      <button class="btn" type="submit">保存这条想买</button>
+      <p class="ok" id="wishMsg"></p>
+    </form>
+  </div>
+
+  <div class="card" id="book">
+    <h2>预约宿舍小样试吃</h2>
+    <p class="hint">草稿只存本机，不构成订单，不收定金。</p>
+    <form id="bookForm">
+      <div class="row2">
+        <div class="field"><span>称呼</span><input name="name" required placeholder="小陈"/></div>
+        <div class="field"><span>手机号</span><input name="phone" required inputmode="numeric" maxlength="11" placeholder="11位；提交人电话待补"/></div>
+      </div>
+      <div class="field"><span>方便时段</span>
+        <select name="slot"><option>课后傍晚</option><option>周末上午</option><option>周末下午</option></select>
+      </div>
+      <button class="btn" type="submit">留下预约（仅存本机）</button>
+      <div class="err" id="bookErr"></div>
+      <p class="ok" id="bookMsg"></p>
+    </form>
+  </div>
+
+  <div class="card faq">
+    <h2>常见疑问</h2>
+    <details open><summary>这是不是已经在卖货/建厂？</summary><p>不是。本页只收集试吃意向。第1周已明确不自建厂，后续只考虑代工。</p></details>
+    <details><summary>为什么不做农户深加工？</summary><p>有价值，但每周仅2–3小时、场地与设备不够，第1周已列为备选。</p></details>
+    <details><summary>会不会收定金、压货？</summary><p>不会。预约不是订单；小规模试吃验证口味与份量。</p></details>
+    <details><summary>同学群点赞算试吃吗？</summary><p>不算。有效样本只计本校在校生宿舍加餐场景。</p></details>
+  </div>
+
+  <div class="card" id="hist"><h2>本机记录</h2><ul class="list" id="list"><li>暂无</li></ul></div>
+  <footer>
+    从容应对组（姓名学号电话待补）· 低添加浆果小样意向 · 路径 B · 不自建厂 · 不写医疗功效<br/>
+    公网 <code>https://hjw-create.github.io/congyd-jiangguo-mvp/</code> · 模拟笔记见 /xhs/
+  </footer>
 </div>
 <script>
 (function(){
@@ -56,20 +188,43 @@ label.ck{display:flex;gap:8px;padding:8px;border:1px solid var(--line);border-ra
   function all(){return boxes.every(function(c){return c.checked})}
   boxes.forEach(function(c){c.onchange=function(){save.disabled=!all()}});
   function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return[]}}
+  function saveList(rows){localStorage.setItem(KEY,JSON.stringify(rows.slice(0,50)));render()}
   function render(){
     var rows=load(), box=document.getElementById('list');
-    if(!rows.length){box.innerHTML='<li>暂无记录。先勾五项。</li>';return}
-    box.innerHTML=rows.map(function(r){return '<li>'+r.who+' · '+r.budget+' · '+(r.note||'无备注')+'<div class="hint">'+r.at+'</div></li>'}).join('');
+    if(!rows.length){box.innerHTML='<li>暂无记录。先勾五项或写一条想买。</li>';return}
+    box.innerHTML=rows.map(function(r){return '<li><b>'+r.type+'</b> · '+(r.summary||'')+'<div class="hint">'+r.at+'</div></li>'}).join('');
   }
+  function stamp(){return new Date().toLocaleString('zh-CN',{hour12:false})}
   document.getElementById('f').onsubmit=function(e){
     e.preventDefault();
     var err=document.getElementById('err'); err.style.display='none';
     if(!all()){err.textContent='请先勾齐五项';err.style.display='block';return}
     var fd=new FormData(e.target);
     var rows=load();
-    rows.unshift({who:fd.get('who'),budget:fd.get('budget'),note:(fd.get('note')||'').trim(),at:new Date().toLocaleString('zh-CN',{hour12:false})});
-    localStorage.setItem(KEY,JSON.stringify(rows.slice(0,40)));
-    e.target.reset(); boxes.forEach(function(c){c.checked=false}); save.disabled=true; render();
+    rows.unshift({type:'试吃意向',summary:(fd.get('who')||'')+' · '+(fd.get('budget')||'')+' · '+(fd.get('pain')||'')+' · '+(fd.get('note')||'无备注'),at:stamp()});
+    saveList(rows);
+    e.target.reset(); boxes.forEach(function(c){c.checked=false}); save.disabled=true;
+  };
+  document.getElementById('wishForm').onsubmit=function(e){
+    e.preventDefault();
+    var fd=new FormData(e.target);
+    var rows=load();
+    rows.unshift({type:'想买清单',summary:(fd.get('item')||'')+' · '+(fd.get('care')||'')+' · '+((fd.get('note')||'无').trim()),at:stamp()});
+    saveList(rows);
+    document.getElementById('wishMsg').textContent='想买清单已保存。';
+  };
+  document.getElementById('bookForm').onsubmit=function(e){
+    e.preventDefault();
+    var fd=new FormData(e.target);
+    var phone=(fd.get('phone')||'').trim();
+    var err=document.getElementById('bookErr'); err.style.display='none';
+    document.getElementById('bookMsg').textContent='';
+    if(!/^1[3-9]\d{9}$/.test(phone)){err.textContent='请填写11位有效手机号';err.style.display='block';return}
+    var rows=load();
+    rows.unshift({type:'预约试吃',summary:(fd.get('name')||'')+' · '+phone+' · '+(fd.get('slot')||''),at:stamp()});
+    saveList(rows);
+    document.getElementById('bookMsg').textContent='预约草稿已在本机。不收定金。';
+    e.target.reset();
   };
   render();
 })();
