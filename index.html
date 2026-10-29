@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>低添加浆果小样意向 · 从容应对组</title>
+<style>
+:root{--g:#2f6b52;--g2:#3d8a68;--bg:#f4faf6;--ink:#1a2e24;--line:#c5ddd0}
+*{box-sizing:border-box}body{margin:0;font-family:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(165deg,#e8f5ee,#f4faf6 45%,#fff);color:var(--ink);line-height:1.55}
+.wrap{max-width:720px;margin:0 auto;padding:28px 18px 64px}
+.kicker{font-size:12px;color:var(--g);font-weight:700;letter-spacing:.08em}
+h1{font-size:1.55rem;margin:8px 0 10px;color:var(--g)}
+.lead{color:#3a5348}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;margin:14px 0}
+.card h2{margin:0 0 10px;color:var(--g);font-size:1.05rem}
+.bound span{display:block;background:#eef7f1;border-left:3px solid var(--g);padding:8px 12px;margin:6px 0}
+label.ck{display:flex;gap:8px;padding:8px;border:1px solid var(--line);border-radius:10px;margin:6px 0;background:#fafdfb}
+.field{margin:8px 0}input,select,textarea{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;font:inherit}
+.btn{background:var(--g);color:#fff;border:0;padding:12px 18px;border-radius:999px;font:inherit;font-weight:700;cursor:pointer}
+.btn:disabled{opacity:.45} .err{color:#a33;display:none} .hint{font-size:.82rem;color:#5a7266}
+.list{list-style:none;padding:0}.list li{border:1px solid var(--line);border-radius:10px;padding:10px;margin:6px 0;background:#fafdfb}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">从容应对组 · 课程 MVP · 个人信息待补</div>
+  <h1>宿舍想吃干净浆果零食，先勾意向</h1>
+  <p class="lead">帮在校大学生解决低添加浆果零食选择少、售价偏高。只做小样/代工调研，不自建厂，不写医疗功效，不在此页下单。</p>
+  <div class="card"><h2>边界三句</h2><div class="bound">
+    <span>这是试吃意向页，不是保健品商城。</span>
+    <span>没有生产许可证就不建厂、不开作坊，后续只考虑代工。</span>
+    <span>不承诺减肥、抗氧化治病或保证瘦身；出现不适请停食。</span>
+  </div></div>
+  <div class="card"><h2>试吃意向五项</h2>
+    <p class="hint">五项勾齐才能保存。</p>
+    <form id="f">
+      <label class="ck"><input type="checkbox" name="c1"/> 想买品类已想过（蓝莓干/果条/混合浆果）</label>
+      <label class="ck"><input type="checkbox" name="c2"/> 痛点已选：更怕添加剂 / 更怕贵 / 两者都有</label>
+      <label class="ck"><input type="checkbox" name="c3"/> 取货：宿舍代收 / 社团自提 / 仅先试吃</label>
+      <label class="ck"><input type="checkbox" name="c4"/> 预算已填，接受先小样再决定是否跟单</label>
+      <label class="ck"><input type="checkbox" name="c5"/> 边界：不建厂、不写医疗功效、不在此页付款</label>
+      <div class="field"><span>怎么称呼</span><input name="who" required placeholder="宿舍称呼"/></div>
+      <div class="field"><span>预算</span><select name="budget" required><option value="">请选择</option><option>10 以内先尝</option><option>10–25</option><option>25–40</option><option>看克重再说</option></select></div>
+      <div class="field"><span>一句想吃的</span><textarea name="note" placeholder="例如：蓝莓干别太甜；不要礼盒溢价"></textarea></div>
+      <button class="btn" id="save" type="submit" disabled>保存到本机</button>
+      <div class="err" id="err"></div>
+    </form>
+  </div>
+  <div class="card"><h2>本机记录</h2><ul class="list" id="list"><li>暂无</li></ul></div>
+  <p class="hint">公网 https://hjw-create.github.io/congyd-jiangguo-mvp/xhs/ 为第6周模拟笔记。联系方式待补。</p>
+</div>
+<script>
+(function(){
+  var KEY='congyd_jiangguo_v1';
+  var boxes=[].slice.call(document.querySelectorAll('#f input[type=checkbox]'));
+  var save=document.getElementById('save');
+  function all(){return boxes.every(function(c){return c.checked})}
+  boxes.forEach(function(c){c.onchange=function(){save.disabled=!all()}});
+  function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return[]}}
+  function render(){
+    var rows=load(), box=document.getElementById('list');
+    if(!rows.length){box.innerHTML='<li>暂无记录。先勾五项。</li>';return}
+    box.innerHTML=rows.map(function(r){return '<li>'+r.who+' · '+r.budget+' · '+(r.note||'无备注')+'<div class="hint">'+r.at+'</div></li>'}).join('');
+  }
+  document.getElementById('f').onsubmit=function(e){
+    e.preventDefault();
+    var err=document.getElementById('err'); err.style.display='none';
+    if(!all()){err.textContent='请先勾齐五项';err.style.display='block';return}
+    var fd=new FormData(e.target);
+    var rows=load();
+    rows.unshift({who:fd.get('who'),budget:fd.get('budget'),note:(fd.get('note')||'').trim(),at:new Date().toLocaleString('zh-CN',{hour12:false})});
+    localStorage.setItem(KEY,JSON.stringify(rows.slice(0,40)));
+    e.target.reset(); boxes.forEach(function(c){c.checked=false}); save.disabled=true; render();
+  };
+  render();
+})();
+</script>
+</body>
+</html>
