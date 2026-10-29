@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<title>低添浆果 · 模拟小红书</title>
+<style>
+:root{--xhs:#ff2442;--bg:#f5f5f5;--card:#fff;--ink:#333;--muted:#999;--line:#eee}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#1a1a1a;color:var(--ink)}
+.phone{max-width:390px;margin:0 auto;min-height:100vh;background:var(--bg);box-shadow:0 0 40px rgba(0,0,0,.5)}
+.banner{background:#fff3f0;color:#a33;font-size:11px;padding:8px 12px;text-align:center;border-bottom:1px solid #ffd4cc}
+.top{background:#fff;padding:12px 14px 8px;position:sticky;top:0;z-index:5;border-bottom:1px solid var(--line)}
+.tabs{display:flex;gap:18px;font-size:15px;font-weight:600;color:var(--muted)}
+.tabs .on{color:var(--ink);position:relative}
+.tabs .on:after{content:"";position:absolute;left:50%;bottom:-8px;width:20px;height:3px;background:var(--xhs);border-radius:2px;transform:translateX(-50%)}
+.search{margin-top:10px;background:var(--bg);border-radius:999px;padding:8px 14px;font-size:13px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:6px}
+.card{background:var(--card);border-radius:8px;overflow:hidden}
+.cover{aspect-ratio:3/4;display:flex;align-items:flex-end;padding:10px;color:#fff;font-weight:700;font-size:14px;line-height:1.35}
+.c1{background:linear-gradient(160deg,#2f6b52,#1a3d2e)}
+.c2{background:linear-gradient(160deg,#3d8a68,#2f6b52)}
+.c3{background:linear-gradient(160deg,#5a9a6a,#2f6b52)}
+.meta{padding:8px;font-size:12px}
+.meta .t{font-size:13px;font-weight:600;margin:0 0 6px}
+.row{display:flex;align-items:center;justify-content:space-between;color:var(--muted)}
+.av{width:18px;height:18px;border-radius:50%;background:var(--xhs);display:inline-block;margin-right:4px}
+.nav{position:sticky;bottom:0;background:#fff;border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:8px 0 14px;font-size:11px;color:var(--muted)}
+.nav a{color:inherit;text-decoration:none;text-align:center}
+.nav .on{color:var(--xhs);font-weight:700}
+.nav b{display:block;font-size:18px;line-height:1.1}
+a.cardlink{color:inherit;text-decoration:none}
+.foot{padding:10px 14px 24px;font-size:11px;color:var(--muted);text-align:center}
+</style>
+</head>
+<body>
+<div class="phone">
+  <div class="banner">课程模拟界面 · 非小红书官方 · 从容应对组（个人信息待补）第六周作业</div>
+  <header class="top">
+    <div class="tabs"><span class="on">发现</span><span>关注</span><span>附近</span></div>
+    <div class="search">搜索 低添加浆果零食 / 不建厂代工</div>
+  </header>
+  <main class="grid">
+    <a class="card cardlink" href="note1.html">
+      <div class="cover c1">宿舍加餐<br/>先看这5项</div>
+      <div class="meta"><p class="t">宿舍加餐先看这5项（低添加浆果零食）</p><div class="row"><span><i class="av"></i>低添浆果</span><span>♥ <b data-k="n1_like">112</b></span></div></div>
+    </a>
+    <a class="card cardlink" href="note2.html">
+      <div class="cover c2">我们不建厂<br/>也不写功效</div>
+      <div class="meta"><p class="t">我们不建厂：小样试吃能帮什么、不能帮什么</p><div class="row"><span><i class="av"></i>低添浆果</span><span>♥ <b data-k="n2_like">188</b></span></div></div>
+    </a>
+    <a class="card cardlink" href="note3.html">
+      <div class="cover c3">两周试吃<br/>不收定金</div>
+      <div class="meta"><p class="t">两周试吃：勾完意向再预约小样（不收定金）</p><div class="row"><span><i class="av"></i>低添浆果</span><span>♥ <b data-k="n3_like">79</b></span></div></div>
+    </a>
+  </main>
+  <p class="foot">点开笔记可互动（赞/藏/评存在本机）。数据台见「我」。</p>
+  <nav class="nav">
+    <a class="on" href="index.html"><b>□</b>首页</a>
+    <a href="market.html"><b>○</b>市集</a>
+    <a href="note1.html"><b>+</b>发布</a>
+    <a href="msg.html"><b>△</b>消息</a>
+    <a href="me.html"><b>☺</b>我</a>
+  </nav>
+</div>
+<script>
+(function(){
+var KEY='congyd_xhs_mock_v1';
+function load(){try{return JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){return{}}}
+var d=load();
+document.querySelectorAll('[data-k]').forEach(function(el){
+  var k=el.getAttribute('data-k');
+  if(typeof d[k]==='number') el.textContent=d[k];
+});
+})();
+</script>
+</body>
+</html>
